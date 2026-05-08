@@ -18,7 +18,7 @@
             <label class="text-sm text-gray-600">Email</label>
             <div class="relative">
                 <i class="bi bi-envelope absolute left-3 top-3 text-gray-400"></i>
-                <input type="email" class="w-full pl-10 py-3 border rounded-lg focus:ring-2 focus:ring-green-600 outline-none" placeholder="Enter your email">
+                <input type="email" name="email" class="w-full pl-10 py-3 border rounded-lg focus:ring-2 focus:ring-green-600 outline-none" placeholder="Enter your email">
             </div>
         </div>
 
@@ -27,7 +27,7 @@
             <label class="text-sm text-gray-600">Password</label>
             <div class="relative">
                 <i class="bi bi-lock absolute left-3 top-3 text-gray-400"></i>
-                <input id="password" type="password" class="w-full pl-10 pr-10 py-3 border rounded-lg focus:ring-2 focus:ring-green-600 outline-none" placeholder="Enter password">
+                <input id="password" type="password" name="password" class="w-full pl-10 pr-10 py-3 border rounded-lg focus:ring-2 focus:ring-green-600 outline-none" placeholder="Enter password">
                 <button type="button" onclick="togglePassword()" class="absolute right-3 top-3 text-gray-500">
                     <i id="eyeIcon" class="bi bi-eye"></i>
                 </button>

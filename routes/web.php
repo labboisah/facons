@@ -32,6 +32,7 @@ Route::get('/test-toasts', function () {
 })->name('test.toasts');
 
 require __DIR__.'/auth.php';
-require __DIR__.'/student.php';
 require __DIR__.'/lecturer.php';
 require __DIR__.'/admin.php';
+require __DIR__.'/student.php';
+
