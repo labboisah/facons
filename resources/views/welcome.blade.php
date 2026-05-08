@@ -109,17 +109,10 @@
           </nav>
           <!-- CTA BUTTONS -->
           <div class="hidden lg:flex items-center gap-2">
-            <a href="{{ route('student.login') }}" class="flex items-center gap-1 px-3 py-2 rounded-lg bg-green-100 text-green-700 hover:bg-green-200 transition duration-200 text-sm font-medium">
-              <i class="bi bi-backpack" aria-hidden="true"></i>
-              <span>Student</span>
-            </a>
-            <a href="{{ route('lecturer.login') }}" class="flex items-center gap-1 px-3 py-2 rounded-lg bg-purple-100 text-purple-700 hover:bg-purple-200 transition duration-200 text-sm font-medium">
-              <i class="bi bi-mortarboard" aria-hidden="true"></i>
-              <span>Lecturer</span>
-            </a>
-            <a href="{{ route('admin.login') }}" class="flex items-center gap-1 px-3 py-2 rounded-lg bg-blue-100 text-blue-700 hover:bg-blue-200 transition duration-200 text-sm font-medium">
+            
+            <a href="{{ route('student.login') }}" class="flex items-center gap-1 px-3 py-2 rounded-lg bg-blue-100 text-blue-700 hover:bg-blue-200 transition duration-200 text-sm font-medium">
               <i class="bi bi-shield-lock" aria-hidden="true"></i>
-              <span>Admin</span>
+              <span>Login</span>
             </a>
           </div>
           <!-- HAMBURGER MENU BUTTON -->
