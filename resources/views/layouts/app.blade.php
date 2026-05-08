@@ -1,34 +1,124 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="csrf-token" content="{{ csrf_token() }}">
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Nursing Student Dashboard</title>
 
-        <title>{{ config('app.name', 'Laravel') }}</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
-        <!-- Fonts -->
-        <link rel="preconnect" href="https://fonts.bunny.net">
-        <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <style>
+    body{
+      background:#f4f7fb;
+    }
 
-        <!-- Scripts -->
-        @vite(['resources/css/app.css', 'resources/js/app.js'])
-    </head>
-    <body class="font-sans antialiased bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100">
-        <div class="min-h-screen">
-            @include('layouts.navigation')
+    .sidebar{
+      height:100vh;
+      background: #fff;;
+      color:black;
+      position:fixed;
+      width:250px;
+    }
 
-            @isset($header)
-                <header class="bg-white/90 dark:bg-slate-900/90 border-b border-slate-200 dark:border-slate-700 backdrop-blur">
-                    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                        {{ $header }}
-                    </div>
-                </header>
-            @endisset
+    .sidebar a{
+      color:black;
+      text-decoration:none;
+      display:block;
+      padding:12px 20px;
+      transition:0.3s;
+    }
 
-            <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-                {{ $slot }}
-            </main>
-        </div>
-    </body>
+    .sidebar a:hover{
+      background:rgba(134, 185, 109, 0.2);
+      padding-left:25px;
+    }
+
+    .main-content{
+      margin-left:250px;
+      padding:20px;
+    }
+
+    .card-box{
+      border:none;
+      border-radius:15px;
+      color:white;
+    }
+
+    .welcome-box{
+      background:linear-gradient(to right,#b7df50,#ebf2bb);
+      color:white;
+      border-radius:20px;
+      padding:30px;
+    }
+
+    .table{
+      background:white;
+      border-radius:10px;
+      overflow:hidden;
+    }
+
+    .profile-img{
+      width:45px;
+      height:45px;
+      border-radius:50%;
+      object-fit:cover;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <div class="sidebar p-3">
+    <div class="flex items-center gap-2 sm:gap-3 flex-shrink-0">
+            <img src="{{ asset('images/logo.png') }}" alt="FACONS Logo" class="w-10 sm:w-12 h-auto">
+            <h1 class="font-bold text-green-700 text-base sm:text-lg">FACONS</h1>
+          </div>
+    <div class="border-top my-3"></div>
+
+    <a href="#"><i class="bi bi-house-door-fill me-2"></i> Dashboard</a>
+    <a href="#"><i class="bi bi-file-earmark-text me-2"></i> Pay Bills</a>
+    <a href="#"><i class="bi bi-journal-medical me-2"></i> Courses Registration</a>
+    <a href="#"><i class="bi bi-calendar me-2"></i> Academic Calendar</a>
+    <a href="#"><i class="bi bi-bar-chart-fill me-2"></i>Check Results</a>
+    <a href="#"><i class="bi bi-laptop me-2"></i>E-Library</a>
+    <a href="#"><i class="bi bi-person-fill me-2"></i> Manage Profile</a>
+    <a href="#"><i class="bi bi-box-arrow-right me-2"></i> Logout</a>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main-content">
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-light bg-white shadow-sm rounded px-3 mb-4">
+      <div>
+        <h4 class="mb-0">Student Dashboard</h4>
+      </div>
+
+      <div class="d-flex align-items-center">
+        <img src="https://i.pravatar.cc/100" class="profile-img me-2">
+        <strong>Student name</strong>
+      </div>
+    </nav>
+
+    <!-- Welcome -->
+    <div class="welcome-box mb-4">
+      <h2>Welcome Back 👋</h2>
+      <p>
+        Keep learning and improving your nursing skills every day.
+      </p>
+    </div>
+
+        @yield('content')
+     
+    </div>
+
+  </div>
+
+</body>
 </html>
