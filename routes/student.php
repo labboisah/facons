@@ -28,6 +28,10 @@ Route::get('/student/e-library', function () {
     return view('auth.student.e-library');
 })->middleware(['auth:student', 'verified'])->name('student.e-library');
 
+Route::get('/student/manage-profile', function () {
+    return view('auth.student.manage-profile');
+})->middleware(['auth:student', 'verified'])->name('student.manage-profile');
+
 // Student Dashboard
 Route::get('/student/dashboard', function () {
     return view('dashboards.student');
