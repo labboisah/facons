@@ -20,6 +20,10 @@ Route::get('/student/academic-calendar', function () {
     return view('auth.student.academic-calendar');
 })->middleware(['auth:student', 'verified'])->name('student.academic-calendar');
 
+Route::get('/student/check-results', function () {
+    return view('auth.student.check-results');
+})->middleware(['auth:student', 'verified'])->name('student.check-results');
+
 // Student Dashboard
 Route::get('/student/dashboard', function () {
     return view('dashboards.student');
