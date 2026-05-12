@@ -24,6 +24,10 @@ Route::get('/student/check-results', function () {
     return view('auth.student.check-results');
 })->middleware(['auth:student', 'verified'])->name('student.check-results');
 
+Route::get('/student/e-library', function () {
+    return view('auth.student.e-library');
+})->middleware(['auth:student', 'verified'])->name('student.e-library');
+
 // Student Dashboard
 Route::get('/student/dashboard', function () {
     return view('dashboards.student');
