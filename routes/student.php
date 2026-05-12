@@ -16,6 +16,10 @@ Route::get('/student/courses-registration', function () {
     return view('auth.student.courses-registration');
 })->middleware(['auth:student', 'verified'])->name('student.courses-registration');
 
+Route::get('/student/academic-calendar', function () {
+    return view('auth.student.academic-calendar');
+})->middleware(['auth:student', 'verified'])->name('student.academic-calendar');
+
 // Student Dashboard
 Route::get('/student/dashboard', function () {
     return view('dashboards.student');
