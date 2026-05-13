@@ -5,14 +5,13 @@
  <!-- Main Content -->
         <div class="col-md-10 p-4">
 
-            <div class="card shadow profile-card">
-
+              
                 <!-- Profile Body -->
                 <div class="card-body p-4">
 
                     <!-- Admission Information -->
                     <fieldset class="border p-4 mb-4 rounded">
-                        <legend class="float-none w-auto px-3 text-primary fw-bold">
+                        <legend class="float-none w-auto px-3 text-success fw-bold">
                             Admission Information
                         </legend>
 
@@ -55,11 +54,11 @@
 
                         <div class="row mb-3">
                             <div class="col-md-6">
-                                <p><span class="info-label">Full Name:</span> Maryam Bello</p>
+                                <p><span class="info-label">Full Name:</span> {{ auth()->user()->name }}</p>
                             </div>
 
                             <div class="col-md-6">
-                                <p><span class="info-label">Gender:</span> Female</p>
+                                <p><span class="info-label">Gender:</span> {{ auth()->user()->gender }}</p>
                             </div>
                         </div>
 
@@ -75,24 +74,24 @@
 
                         <div class="row mb-3">
                             <div class="col-md-6">
-                                <p><span class="info-label">Email:</span> maryam@gmail.com</p>
+                                <p><span class="info-label">Email:</span>{{ auth()->user()->email }}</p>
                             </div>
 
                             <div class="col-md-6">
-                                <p><span class="info-label">Phone:</span> 08012345678</p>
+                                <p><span class="info-label">Phone:</span> {{ auth()->user()->phone }}</p>
                             </div>
                         </div>
 
                         <div class="row mb-3">
                             <div class="col-md-12">
-                                <p><span class="info-label">Address:</span> Benin City, Edo State, Nigeria</p>
+                                <p><span class="info-label">Address:</span> {{ auth()->user()->address }}
                             </div>
                         </div>
                     </fieldset>
 
                     <!-- Next of Kin Details -->
                     <fieldset class="border p-4 mb-4 rounded">
-                        <legend class="float-none w-auto px-3 text-danger fw-bold">
+                        <legend class="float-none w-auto px-3 text-success fw-bold">
                             Next of Kin Details
                         </legend>
 
@@ -130,8 +129,7 @@
                     </div>
 
                 </div>
-            </div>
-
+          
         </div>
 
 @endsection()
