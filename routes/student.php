@@ -7,6 +7,9 @@ Route::post('/student/login', [LoginController::class, 'store'])->name('student.
 Route::post('/student/logout', [LoginController::class, 'destroy'])->name('student.logout');
 
 //student nav
+Route::get('/student/dashboard', function () {
+    return view('auth.student.dashboard');
+})->middleware(['auth:student', 'verified'])->name('student.dashboard');
 
 Route::get('/student/bills', function () {
     return view('auth.student.bills');

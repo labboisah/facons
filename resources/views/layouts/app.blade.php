@@ -81,15 +81,22 @@
           </div>
     <div class="border-top my-3"></div>
 
-    <a href="#"><i class="bi bi-house-door-fill me-2"></i> Dashboard</a>
+    <a href="{{ route('student.dashboard') }}"><i class="bi bi-house-door-fill me-2"></i> Dashboard</a>
     <a href="{{ route('student.bills') }}"><i class="bi bi-file-earmark-text me-2"></i>Bills & Payment</a>
     <a href="{{ route('student.courses-registration') }} "><i class="bi bi-journal-medical me-2"></i> Courses Registration</a>
     <a href="{{ route('student.academic-calendar') }}"><i class="bi bi-calendar me-2"></i> Academic Calendar</a>
     <a href="{{ route('student.check-results') }}"><i class="bi bi-bar-chart-fill me-2"></i>Check Results</a>
     <a href="{{ route('student.e-library') }} "><i class="bi bi-laptop me-2"></i>E-Library</a>
     <a href="{{ route('student.manage-profile') }}"><i class="bi bi-person-fill me-2"></i> Manage Profile</a>
-    <a href="{{ route('student.logout') }}"><i class="bi bi-box-arrow-right me-2"></i> Logout 
-    </a>
+    <div>
+      <form method="POST" action="{{ route('student.logout') }}">
+        @csrf
+        <button type="submit" class="w-full text-start">
+          <i class="bi bi-box-arrow-right me-2"></i> Logout
+        </button>
+      </form>
+    </div>
+   
   </div>
 
   <!-- Main Content -->
