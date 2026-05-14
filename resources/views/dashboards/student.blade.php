@@ -5,7 +5,7 @@
 <div class="container-fluid py-4">
 
     <!-- Welcome Section -->
-    <div class="card border-0 shadow-sm rounded-4 mb-4 bg-primary text-white overflow-hidden">
+    <div class="card border-0 shadow-sm rounded-4 mb-4 bg-green-700 text-white overflow-hidden">
 
         <div class="card-body p-4">
 
@@ -25,7 +25,7 @@
 
                 <div class="col-md-4 text-md-end mt-3 mt-md-0">
 
-                    <span class="badge bg-light text-primary px-4 py-2 fs-6">
+                    <span class="badge bg-light text-green-700 px-4 py-2 fs-6">
                         300 Level Student
                     </span>
 
@@ -122,7 +122,7 @@
     <div class="card border-0 shadow-sm rounded-4 mb-4">
 
         <div class="card-header bg-light py-3">
-            <h5 class="mb-0 text-primary">
+            <h5 class="mb-0 text-green-700 font-bold">
                 Quick Access
             </h5>
         </div>
@@ -219,11 +219,11 @@
 
                 <div class="card-header bg-light py-3 d-flex justify-content-between align-items-center">
 
-                    <h5 class="mb-0 text-primary">
+                    <h5 class="mb-0 text-green-700 font-bold">
                         Recent Activities
                     </h5>
 
-                    <button class="btn btn-sm btn-outline-primary">
+                    <button class="btn btn-sm btn-outline-green-700">
                         View All
                     </button>
 
@@ -283,7 +283,7 @@
             <div class="card border-0 shadow-sm rounded-4 h-100">
 
                 <div class="card-header bg-light py-3">
-                    <h5 class="mb-0 text-primary">
+                    <h5 class="mb-0 text-green-700 font-bold">
                         Notifications
                     </h5>
                 </div>

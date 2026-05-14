@@ -48,7 +48,7 @@
     <!-- Academic Calendar Table -->
     <div class="card shadow-sm border-0 rounded-4">
 
-        <div class="card-header bg-primary text-white py-3 rounded-top-4">
+        <div class="card-header bg-green-700 text-white py-3 rounded-top-4">
             <h5 class="mb-0">
                 Academic Activities
             </h5>

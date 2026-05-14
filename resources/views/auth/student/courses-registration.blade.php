@@ -26,7 +26,7 @@
     <!-- Student Information -->
     <div class="card border-0 shadow-sm rounded-4 mb-4">
 
-        <div class="card-header bg-primary text-white py-3 rounded-top-4">
+        <div class="card-header bg-green-700 text-white py-3 rounded-top-4">
             <h5 class="mb-0">
                 Student Information
             </h5>
@@ -118,7 +118,7 @@
     <!-- Courses Table -->
     <div class="card border-0 shadow-sm rounded-4 mb-4">
 
-        <div class="card-header bg-primary text-white py-3 rounded-top-4 d-flex justify-content-between align-items-center">
+        <div class="card-header bg-green-700 text-white py-3 rounded-top-4 d-flex justify-content-between align-items-center">
 
             <h5 class="mb-0">
                 Available Courses
