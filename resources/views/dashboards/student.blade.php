@@ -1,109 +1,325 @@
-<x-app-layout>
-    <x-slot name="header">
-        <div class="flex items-center justify-between">
-            <div>
-                <h2 class="font-semibold text-xl text-slate-900 dark:text-white leading-tight">
-                    Student Dashboard
-                </h2>
-                <p class="text-sm text-slate-600 dark:text-slate-400 mt-1">Welcome, {{ Auth::user()->name }}!</p>
-            </div>
-            <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-100 text-blue-700 dark:bg-blue-900 dark:text-blue-200 text-sm font-medium">
-                <i class="bi bi-mortarboard" aria-hidden="true"></i>
-                Student
-            </span>
-        </div>
-    </x-slot>
+@extends('layouts.app')
 
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 space-y-6">
+@section('content')
 
-            <!-- Welcome Card -->
-            <div class="overflow-hidden rounded-3xl border border-slate-200 bg-white/90 shadow-xl dark:border-slate-800 dark:bg-slate-900/90">
-                <div class="p-8 sm:p-10">
-                    <h3 class="text-2xl font-semibold text-slate-900 dark:text-white">Welcome back!</h3>
-                    <p class="mt-3 text-slate-600 dark:text-slate-400">
-                        You're logged in as a student. Access your courses, view grades, and submit assignments from your dashboard.
+<div class="container-fluid py-4">
+
+    <!-- Welcome Section -->
+    <div class="card border-0 shadow-sm rounded-4 mb-4 bg-green-700 text-white overflow-hidden">
+
+        <div class="card-body p-4">
+
+            <div class="row align-items-center">
+
+                <div class="col-md-8">
+
+                    <h2 class="fw-bold mb-2">
+                        Welcome Back,  {{ auth()->user()->name }}👋
+                    </h2>
+
+                    <p class="mb-0 opacity-75">
+                        Manage your academic activities, payments, course registration and results from your nursing student dashboard.
                     </p>
-                </div>
-            </div>
 
-            <!-- Quick Stats Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
-                <div class="rounded-xl border border-slate-200 bg-white p-6 shadow-sm dark:border-slate-800 dark:bg-slate-900">
-                    <div class="flex items-center justify-between">
-                        <div>
-                            <p class="text-sm font-medium text-slate-600 dark:text-slate-400">Enrolled Courses</p>
-                            <p class="text-3xl font-bold text-slate-900 dark:text-white mt-2">5</p>
-                        </div>
-                        <div class="w-12 h-12 rounded-lg bg-blue-100 dark:bg-blue-900 flex items-center justify-center flex-shrink-0">
-                            <i class="bi bi-book text-xl text-blue-600 dark:text-blue-400" aria-hidden="true"></i>
-                        </div>
-                    </div>
                 </div>
 
-                <div class="rounded-xl border border-slate-200 bg-white p-6 shadow-sm dark:border-slate-800 dark:bg-slate-900">
-                    <div class="flex items-center justify-between">
-                        <div>
-                            <p class="text-sm font-medium text-slate-600 dark:text-slate-400">Current GPA</p>
-                            <p class="text-3xl font-bold text-slate-900 dark:text-white mt-2">3.8</p>
-                        </div>
-                        <div class="w-12 h-12 rounded-lg bg-green-100 dark:bg-green-900 flex items-center justify-center flex-shrink-0">
-                            <i class="bi bi-star text-xl text-green-600 dark:text-green-400" aria-hidden="true"></i>
-                        </div>
-                    </div>
+                <div class="col-md-4 text-md-end mt-3 mt-md-0">
+
+                    <span class="badge bg-light text-green-700 px-4 py-2 fs-6">
+                        300 Level Student
+                    </span>
+
                 </div>
 
-                <div class="rounded-xl border border-slate-200 bg-white p-6 shadow-sm dark:border-slate-800 dark:bg-slate-900">
-                    <div class="flex items-center justify-between">
-                        <div>
-                            <p class="text-sm font-medium text-slate-600 dark:text-slate-400">Pending Assignments</p>
-                            <p class="text-3xl font-bold text-slate-900 dark:text-white mt-2">3</p>
-                        </div>
-                        <div class="w-12 h-12 rounded-lg bg-yellow-100 dark:bg-yellow-900 flex items-center justify-center flex-shrink-0">
-                            <i class="bi bi-clipboard-check text-xl text-yellow-600 dark:text-yellow-400" aria-hidden="true"></i>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="rounded-xl border border-slate-200 bg-white p-6 shadow-sm dark:border-slate-800 dark:bg-slate-900">
-                    <div class="flex items-center justify-between">
-                        <div>
-                            <p class="text-sm font-medium text-slate-600 dark:text-slate-400">Attendance Rate</p>
-                            <p class="text-3xl font-bold text-slate-900 dark:text-white mt-2">92%</p>
-                        </div>
-                        <div class="w-12 h-12 rounded-lg bg-purple-100 dark:bg-purple-900 flex items-center justify-center flex-shrink-0">
-                            <i class="bi bi-check-circle text-xl text-purple-600 dark:text-purple-400" aria-hidden="true"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- My Courses -->
-            <div class="rounded-3xl border border-slate-200 bg-white/90 shadow-xl dark:border-slate-800 dark:bg-slate-900/90">
-                <div class="p-8 sm:p-10">
-                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-6">My Courses</h3>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div class="rounded-xl border border-slate-200 bg-slate-50 p-6 dark:border-slate-800 dark:bg-slate-800">
-                            <h4 class="font-semibold text-slate-900 dark:text-white">Basic Nursing</h4>
-                            <p class="text-sm text-slate-600 dark:text-slate-400 mt-2">Instructor: Dr. Sarah Johnson</p>
-                            <div class="mt-4 bg-slate-300 rounded-full h-2">
-                                <div class="bg-green-600 h-2 rounded-full" style="width: 75%;"></div>
-                            </div>
-                            <p class="text-xs text-slate-600 dark:text-slate-400 mt-2">75% Complete</p>
-                        </div>
-
-                        <div class="rounded-xl border border-slate-200 bg-slate-50 p-6 dark:border-slate-800 dark:bg-slate-800">
-                            <h4 class="font-semibold text-slate-900 dark:text-white">Anatomy & Physiology</h4>
-                            <p class="text-sm text-slate-600 dark:text-slate-400 mt-2">Instructor: Prof. Ahmed Khan</p>
-                            <div class="mt-4 bg-slate-300 rounded-full h-2">
-                                <div class="bg-green-600 h-2 rounded-full" style="width: 60%;"></div>
-                            </div>
-                            <p class="text-xs text-slate-600 dark:text-slate-400 mt-2">60% Complete</p>
-                        </div>
-                    </div>
-                </div>
             </div>
 
         </div>
+
     </div>
-</x-app-layout>
+
+    <!-- Statistics Cards -->
+    <div class="row mb-4">
+
+        <div class="col-md-3 mb-3">
+
+            <div class="card border-0 shadow-sm rounded-4 h-100">
+
+                <div class="card-body text-center p-4">
+
+                    <div class="mb-3">
+                        <i class="bi bi-book-fill fs-1 text-primary"></i>
+                    </div>
+
+                    <h6 class="text-muted">Registered Courses</h6>
+                    <h2 class="fw-bold text-primary">8</h2>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-3 mb-3">
+
+            <div class="card border-0 shadow-sm rounded-4 h-100">
+
+                <div class="card-body text-center p-4">
+
+                    <div class="mb-3">
+                        <i class="bi bi-cash-stack fs-1 text-success"></i>
+                    </div>
+
+                    <h6 class="text-muted">Outstanding Fees</h6>
+                    <h2 class="fw-bold text-success">₦70k</h2>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-3 mb-3">
+
+            <div class="card border-0 shadow-sm rounded-4 h-100">
+
+                <div class="card-body text-center p-4">
+
+                    <div class="mb-3">
+                        <i class="bi bi-award-fill fs-1 text-warning"></i>
+                    </div>
+
+                    <h6 class="text-muted">Current CGPA</h6>
+                    <h2 class="fw-bold text-warning">4.10</h2>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-3 mb-3">
+
+            <div class="card border-0 shadow-sm rounded-4 h-100">
+
+                <div class="card-body text-center p-4">
+
+                    <div class="mb-3">
+                        <i class="bi bi-calendar-check-fill fs-1 text-danger"></i>
+                    </div>
+
+                    <h6 class="text-muted">Upcoming Events</h6>
+                    <h2 class="fw-bold text-danger">5</h2>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Quick Access -->
+    <div class="card border-0 shadow-sm rounded-4 mb-4">
+
+        <div class="card-header bg-light py-3">
+            <h5 class="mb-0 text-green-700 font-bold">
+                Quick Access
+            </h5>
+        </div>
+
+        <div class="card-body">
+
+            <div class="row g-3">
+
+                <div class="col-md-3 col-6">
+                    <a href="{{ route('student.courses-registration') }}" class="text-decoration-none">
+
+                        <div class="card border-0 shadow-sm rounded-4 text-center p-4 h-100 dashboard-link">
+
+                            <div class="mb-3">
+                                <i class="bi bi-journal-text fs-1 text-primary"></i>
+                            </div>
+
+                            <h6 class="fw-bold text-dark">
+                                Course Registration
+                            </h6>
+
+                        </div>
+
+                    </a>
+                </div>
+
+                <div class="col-md-3 col-6">
+                    <a href="{{ route('student.check-results') }}" class="text-decoration-none">
+
+                        <div class="card border-0 shadow-sm rounded-4 text-center p-4 h-100 dashboard-link">
+
+                            <div class="mb-3">
+                                <i class="bi bi-file-earmark-text-fill fs-1 text-success"></i>
+                            </div>
+
+                            <h6 class="fw-bold text-dark">
+                                Check Results
+                            </h6>
+
+                        </div>
+
+                    </a>
+                </div>
+
+                <div class="col-md-3 col-6">
+                    <a href="{{ route('student.bills') }}" class="text-decoration-none">
+
+                        <div class="card border-0 shadow-sm rounded-4 text-center p-4 h-100 dashboard-link">
+
+                            <div class="mb-3">
+                                <i class="bi bi-credit-card-fill fs-1 text-danger"></i>
+                            </div>
+
+                            <h6 class="fw-bold text-dark">
+                                Bills & Payments
+                            </h6>
+
+                        </div>
+
+                    </a>
+                </div>
+
+                <div class="col-md-3 col-6">
+                    <a href="{{ route('student.e-library') }}" class="text-decoration-none">
+
+                        <div class="card border-0 shadow-sm rounded-4 text-center p-4 h-100 dashboard-link">
+
+                            <div class="mb-3">
+                                <i class="bi bi-book-half fs-1 text-warning"></i>
+                            </div>
+
+                            <h6 class="fw-bold text-dark">
+                                E-Library
+                            </h6>
+
+                        </div>
+
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Recent Activities & Notifications -->
+    <div class="row">
+
+        <!-- Recent Activities -->
+        <div class="col-lg-8 mb-4">
+
+            <div class="card border-0 shadow-sm rounded-4 h-100">
+
+                <div class="card-header bg-light py-3 d-flex justify-content-between align-items-center">
+
+                    <h5 class="mb-0 text-green-700 font-bold">
+                        Recent Activities
+                    </h5>
+
+                    <button class="btn btn-sm btn-outline-green-700">
+                        View All
+                    </button>
+
+                </div>
+
+                <div class="card-body">
+
+                    <div class="border-bottom pb-3 mb-3">
+                        <h6 class="fw-bold mb-1">
+                            Course Registration Completed
+                        </h6>
+
+                        <small class="text-muted">
+                            You successfully registered your semester courses.
+                        </small>
+                    </div>
+
+                    <div class="border-bottom pb-3 mb-3">
+                        <h6 class="fw-bold mb-1">
+                            School Fees Payment Updated
+                        </h6>
+
+                        <small class="text-muted">
+                            ₦100,000 payment was received successfully.
+                        </small>
+                    </div>
+
+                    <div class="border-bottom pb-3 mb-3">
+                        <h6 class="fw-bold mb-1">
+                            New Lecture Note Uploaded
+                        </h6>
+
+                        <small class="text-muted">
+                            Community Health Nursing material uploaded to E-Library.
+                        </small>
+                    </div>
+
+                    <div>
+                        <h6 class="fw-bold mb-1">
+                            Examination Timetable Released
+                        </h6>
+
+                        <small class="text-muted">
+                            First semester examination timetable is now available.
+                        </small>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Notifications -->
+        <div class="col-lg-4 mb-4">
+
+            <div class="card border-0 shadow-sm rounded-4 h-100">
+
+                <div class="card-header bg-light py-3">
+                    <h5 class="mb-0 text-green-700 font-bold">
+                        Notifications
+                    </h5>
+                </div>
+
+                <div class="card-body">
+
+                    <div class="alert alert-warning shadow-sm">
+                        Outstanding school fees balance due before examination.
+                    </div>
+
+                    <div class="alert alert-success shadow-sm">
+                        Clinical posting schedule has been updated.
+                    </div>
+
+                    <div class="alert alert-info shadow-sm">
+                        Mid-semester test begins next week.
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<style>
+.dashboard-link {
+    transition: 0.3s;
+}
+
+.dashboard-link:hover {
+    transform: translateY(-5px);
+}
+</style>
+
+@endsection
